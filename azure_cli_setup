@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Azure CLI Installation
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+# Log in to Azure
+az login
+
+# Install kubectl
+sudo az aks install-cli
+
+# Install Docker
+sudo apt-get update
+sudo apt-get install docker.io
+
+# Log in to Azure Container Registry (replace <acr-name> with your ACR name)
+az acr login --name <acr-name>
+
+# Install Helm
+curl -sSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+# Check kubectl version
+kubectl version --client
+
+# Check Docker version
+docker --version
+
+# Check Helm version
+helm version --short
+
+# Print success message
+echo "Azure CLI, kubectl, Docker, and Helm are now installed and configured."
