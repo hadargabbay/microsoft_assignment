@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: service-a-script
+spec:
+  containers:
+  - name: script-container
+    image: your-script-image:tag
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do python /path/to/your/script.py; sleep 60; done"]
