@@ -1,0 +1,19 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bitcoin-script
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bitcoin-script
+  template:
+    metadata:
+      labels:
+        app: bitcoin-script
+    spec:
+      containers:
+      - name: bitcoin-script
+        image: <acr-name>.azurecr.io/bitcoin-script:latest
+        imagePullPolicy: Always
