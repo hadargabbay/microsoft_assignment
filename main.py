@@ -9,7 +9,6 @@ avg_price = None
 previous_prices = []
 
 
-# Function to fetch Bitcoin price from CoinGecko API
 def fetch_bitcoin_price(print_output=True):
     try:
         url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
