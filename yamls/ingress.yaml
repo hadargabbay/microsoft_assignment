@@ -4,7 +4,7 @@ metadata:
   name: my-ingress
 spec:
   rules:
-  - host: xxx  # Replace with your actual host
+  - host: example.com
     http:
       paths:
       - path: /service-A
